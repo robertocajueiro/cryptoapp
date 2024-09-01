@@ -6,3 +6,11 @@ CREATE TABLE coin
     PRICE    NUMERIC(20,2),
     QUANTITY NUMERIC(20,10)
 );
+
+-- INSERT INTO coin (NAME, DATETIME, PRICE, QUANTITY)
+-- VALUES
+--     ('Bitcoin', NOW(), 27000.50, 0.1234567890),
+--     ('Ethereum', NOW(), 1800.75, 1.2345678901),
+--     ('Ripple', NOW(), 0.50, 1000.1234567890),
+--     ('Litecoin', NOW(), 150.25, 5.9876543210),
+--     ('Cardano', NOW(), 0.35, 5000.0123456789);

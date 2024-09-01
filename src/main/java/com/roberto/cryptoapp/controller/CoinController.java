@@ -52,14 +52,16 @@ public class CoinController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable int id) {
+        boolean response = false;
         try {
-            return new ResponseEntity(coinRepository.remove(id), HttpStatus.OK);
+            response = coinRepository.remove(id);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception error) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
         }
     }
 
-    //    @Bean
+//    @Bean
 //    public Coin init(){
 //        Coin c1 = new Coin();
 //        c1.setName("BITCOIN");
