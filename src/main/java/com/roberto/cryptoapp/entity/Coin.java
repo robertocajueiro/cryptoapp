@@ -1,15 +1,29 @@
 package com.roberto.cryptoapp.entity;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Timer;
+import java.sql.Timestamp;
 
+@Entity
+@Table(name = "coin")
 public class Coin {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private int id;
+
+    @Column(name = "NAME")
     private String name;
+
+    @Column(name = "PRICE")
     private BigDecimal price;
+
+    @Column(name = "QUANTITY")
     private BigDecimal quantity;
-    private Timer datetime;
+
+    @Column(name = "DATETIME")
+    private Timestamp datetime;
 
     public int getId() {
         return id;
@@ -43,11 +57,11 @@ public class Coin {
         this.quantity = quantity;
     }
 
-    public Timer getDatetime() {
+    public Timestamp getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(Timer datetime) {
+    public void setDatetime(Timestamp datetime) {
         this.datetime = datetime;
     }
 }
